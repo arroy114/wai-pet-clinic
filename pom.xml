@@ -14,7 +14,7 @@
     </parent>
     <groupId>wai</groupId>
     <artifactId>wai-pet-clinic</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>wai-pet-clinic</name>
     <description>Wai Pet Clinic Project</description>
 
@@ -46,7 +46,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/arroy114/wai-pet-clinic.git</developerConnection>
-      <tag>wai-pet-clinic-0.0.2</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
