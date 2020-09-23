@@ -9,10 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <!--Sub module has the same version and groupId as parent, so only need artifactId-->
     <artifactId>pet-clinic-data</artifactId>
 
     <properties>
-        <spring-boot.repackage.skip>true</spring-boot.repackage.skip><!--this tag is used to tell maven that the is not the main jar, but a fat global jar, so no need to repackage-->
+        <!--this tag is used to tell maven that this is not the main jar, so no need to repackage-->
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
 
     <dependencies>
