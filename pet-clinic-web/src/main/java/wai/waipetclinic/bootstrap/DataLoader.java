@@ -6,8 +6,6 @@ import wai.waipetclinic.model.Owner;
 import wai.waipetclinic.model.Vet;
 import wai.waipetclinic.service.OwnerService;
 import wai.waipetclinic.service.VetService;
-import wai.waipetclinic.service.map.OwnerServiceMap;
-import wai.waipetclinic.service.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -16,9 +14,9 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
 
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

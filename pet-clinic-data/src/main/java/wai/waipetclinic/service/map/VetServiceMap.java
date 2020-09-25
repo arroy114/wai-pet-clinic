@@ -1,10 +1,12 @@
 package wai.waipetclinic.service.map;
 
+import org.springframework.stereotype.Service;
 import wai.waipetclinic.model.Vet;
 import wai.waipetclinic.service.VetService;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

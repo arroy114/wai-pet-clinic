@@ -1,10 +1,12 @@
 package wai.waipetclinic.service.map;
 
+import org.springframework.stereotype.Service;
 import wai.waipetclinic.model.Owner;
 import wai.waipetclinic.service.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
