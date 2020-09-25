@@ -1,11 +1,11 @@
 package wai.waipetclinic.service.map;
 
 import wai.waipetclinic.model.Owner;
-import wai.waipetclinic.service.CrudService;
+import wai.waipetclinic.service.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -32,5 +32,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         //this.deleteById(id) => recuses infinitely '.' the method will call itself
         //=> we should call the deleteById() that is inherited by superclass AbstractMapService
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
