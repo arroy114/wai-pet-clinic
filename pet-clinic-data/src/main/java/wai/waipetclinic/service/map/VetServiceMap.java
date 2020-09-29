@@ -1,13 +1,21 @@
 package wai.waipetclinic.service.map;
 
 import org.springframework.stereotype.Service;
+import wai.waipetclinic.model.Specialty;
 import wai.waipetclinic.model.Vet;
+import wai.waipetclinic.service.SpecialtyService;
 import wai.waipetclinic.service.VetService;
 
 import java.util.Set;
 
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+
+    SpecialtyService specialtyService;
+
+    public VetServiceMap(SpecialtyService specialtyService) {
+        this.specialtyService = specialtyService;
+    }
 
     @Override
     public Set<Vet> findAll() {
@@ -21,6 +29,15 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet vet) {
+
+        if(vet.getSpecialties().size()>0){
+            vet.getSpecialties().forEach(specialty -> {
+                if(specialty.getId() == null){
+                    Specialty savedSpecialty = specialtyService.save(specialty);
+                    savedSpecialty.setId(savedSpecialty.getId());
+                }
+            });
+        }
         return super.save(vet);
     }
 

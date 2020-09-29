@@ -2,12 +2,12 @@ package wai.waipetclinic.service.map;
 
 import org.springframework.stereotype.Service;
 import wai.waipetclinic.model.Specialty;
-import wai.waipetclinic.service.SpecialtiesService;
+import wai.waipetclinic.service.SpecialtyService;
 
 import java.util.Set;
 
 @Service
-public class SpecialtyServiceMap extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialtyServiceMap extends AbstractMapService<Specialty, Long> implements SpecialtyService {
     @Override
     public Set<Specialty> findAll() {
         return super.findAll();
